@@ -1,3 +1,1 @@
-# robotsimulasyonu
-Robot Simülasyonu (3 Degrees of freedom)
-asd
+# ROBOT SİMÜLASYONU (3 Degrees of freedom)
