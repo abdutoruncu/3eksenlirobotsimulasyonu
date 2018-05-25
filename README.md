@@ -43,7 +43,51 @@ Programda ekleme yapcağımız yerler;
 Bu satırların altına bazı değerler tanımlayacağız.
 
 
-Ters alma işlemini yapacağımız "pushbutton1" satırının alt satırlarına şunları yazıyoruz;
+
+Girdiğimiz açılara göre robotu hareket ettireceğimiz "pushbutton1" satırı altına şunları yazıyoruz; 
+
+Acii_1 = str2double(handles.Aci_1.String)*pi/180;  % Kullanıcı tarafından girilen açıları "double" formatına çevriyoruz.
+
+Acii_2 = str2double(handles.Aci_2.String)*pi/180;
+
+Acii_3 = str2double(handles.Aci_3.String)*pi/180;
+
+
+L_1 = 20;
+
+L_2 = 50;
+
+L_3 = 40;
+
+
+L (1) = Link([0 L_1 0 pi/2]);
+
+L (2) = Link([0 0 L_2 0]);
+
+L (3) = Link([0 0 L_3 0]);
+
+
+Robot = SerialLink(L);
+
+Robot.name = 'ROBOTIK';
+
+Robot.plot([Acii_1 Acii_2 Acii_3]);
+
+
+T = Robot.fkine([Acii_1 Acii_2 Acii_3]);
+
+handles.KorX.String = num2str(floor(T(1,4)));
+
+handles.KorY.String = num2str(floor(T(2,4)));
+
+handles.KorZ.String = num2str(floor(T(3,4)));
+
+
+
+
+
+
+Ters alma işlemini yapacağımız "pushbutton2" satırının alt satırlarına şunları yazıyoruz;
 
 KorX = str2double(handles.Kor_1.String); % X , Y ve  Z içine yazılı olan string değerlerini kullanbilmek için "double" formatına çevirdik.
 
@@ -83,47 +127,6 @@ handles.Aci_2.String = num2str(floor(J(2)));
 handles.Aci_3.String = num2str(floor(J(3)));
 
 Robot.plot(J*pi/180); % Ters alma işlemi yapıldıktan sonra ekranımzda robot kolunun yer değiştirdiğini görebilceğiz.
-
-
-
-
-Girdiğimiz açılara göre robotu hareket ettireceğimiz "pushbutton1" satırı altına şunları yazıyoruz; 
-
-Acii_1 = str2double(handles.Aci_1.String)*pi/180;  % Kullanıcı tarafından girilen açıları "double" formatına çevriyoruz.
-
-Acii_2 = str2double(handles.Aci_2.String)*pi/180;
-
-Acii_3 = str2double(handles.Aci_3.String)*pi/180;
-
-
-L_1 = 20;
-
-L_2 = 50;
-
-L_3 = 40;
-
-
-L (1) = Link([0 L_1 0 pi/2]);
-
-L (2) = Link([0 0 L_2 0]);
-
-L (3) = Link([0 0 L_3 0]);
-
-
-Robot = SerialLink(L);
-
-Robot.name = 'ROBOTIK';
-
-Robot.plot([Acii_1 Acii_2 Acii_3]);
-
-
-T = Robot.fkine([Acii_1 Acii_2 Acii_3]);
-
-handles.KorX.String = num2str(floor(T(1,4)));
-
-handles.KorY.String = num2str(floor(T(2,4)));
-
-handles.KorZ.String = num2str(floor(T(3,4)));
 
 
 # PROJE SONU
