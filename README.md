@@ -133,8 +133,7 @@ Robot.plot(J*pi/180); % Ters alma işlemi yapıldıktan sonra ekranımzda robot 
 
 Tüm bu işlemlerden sonra projeyi çalıştırın ve karşınıza gelen arayüzden açıları girerek "tamam" a tıklayın. Karşınıza gelen arayüzden değerleri değiştirerek robot simülasyonunu rahatça kullabilirisniz. Projenin tam halini "robotik" klasöründen bulabilirsiniz.
 
-Abdurrahman Toruncu 131202030
-Muhammed Burkankulu 131202026
+Abdurrahman Toruncu
 
 SELÇUK ÜNİVERSİTESİ ELEKTRİK-ELEKTRONİK MÜHENDİSLİĞİ BÖLÜMÜ.
 
